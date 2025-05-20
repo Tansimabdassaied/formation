@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation de votre adresse email</title>
+</head>
+<body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+
+    <!-- Logo -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo" style="max-height: 80px;">
+    </div>
+
+   
+    <p>
+        Merci de vous être inscrit sur notre plateforme !<br>
+        Veuillez confirmer votre adresse email en cliquant sur le lien ci-dessous :
+    </p>
+
+    <p style="margin: 20px 0;">
+        <a href="{{ signedUrl|raw }}" style="
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        ">✅ Confirmer mon adresse email</a>
+    </p>
+
+    <p>
+        Ce lien expirera dans :<br>
+        <strong>{{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}</strong>
+    </p>
+
+    <hr>
+
+    <p style="font-size: 0.9em; color: #888;">
+        Si vous n’avez pas demandé cette inscription, vous pouvez ignorer ce message.
+    </p>
+
+    <p style="margin-top: 30px;">Cordialement,<br>L’équipe du site 🎓</p>
+
+</body>
+</html>

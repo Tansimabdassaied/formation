@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ page_title }}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for msg in messages %}
+                <tr>
+                    <td>{{ msg.name }}</td>
+                    <td>{{ msg.email }}</td>
+                    <td>{{ msg.message }}</td>
+                    <td>{{ msg.createdAt|date('d/m/Y H:i') }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Aucun message pour le moment.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

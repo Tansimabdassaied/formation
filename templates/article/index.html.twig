@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+<h1>{{ page_title }}</h1>
+<ul>
+    {% for article in articles %}
+        <li>
+            <a href="{{ path('article_show', {'id': article.id}) }}">
+                {{ article.title }}
+            </a>
+            <p>{{ article.content|slice(0, 100) ~ '...' }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

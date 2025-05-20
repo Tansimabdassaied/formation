@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ training.title }}</h1>
+
+    <p><strong>Durée :</strong> {{ training.duration }}</p>
+    <p><strong>Description :</strong> {{ training.description }}</p>
+    <p><strong>Date de début :</strong> {{ training.startDate|date('d/m/Y') }}</p>
+    <p><strong>Formateur :</strong> {{ training.instructor }}</p>
+
+    <a href="{{ path('training') }}" class="btn btn-primary mt-3">Retour aux formations</a>
+{% endblock %}

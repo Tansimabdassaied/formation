@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ page_title }}</h1>
+
+    <form method="get" action="{{ path('chat') }}">
+        <div class="mb-3">
+            <label for="message" class="form-label">Votre message :</label>
+            <textarea name="message" id="message" class="form-control">{{ userMessage }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+
+    {% if botReply %}
+        <div class="mt-4 alert alert-info">
+            <strong>Réponse de l'IA :</strong><br>
+            {{ botReply }}
+        </div>
+    {% endif %}
+{% endblock %}

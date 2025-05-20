@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation d'inscription{% endblock %}
+
+{% block body %}
+    <div class="container mt-5 text-center">
+        <div class="alert alert-success shadow-sm p-4">
+            <h1 class="mb-3">🎉 Merci pour votre inscription !</h1>
+            <p>Un email de confirmation a été envoyé à votre adresse.</p>
+            <p>Veuillez vérifier votre boîte de réception pour confirmer votre compte.</p>
+        </div>
+        <a href="{{ path('app_login') }}" class="btn btn-primary mt-3">Se connecter</a>
+    </div>
+{% endblock %}

@@ -39,10 +39,12 @@ class ChatController extends AbstractController
                         'Content-Type' => 'application/json',
                     ],
                     'json' => [
-                        'model' => 'gpt-3.5-turbo',
+                        'model' => 'gpt-4.1-turbo',
                         'messages' => [
+                            ['role' => 'system', 'content' => 'Vous êtes un assistant utile.'],
                             ['role' => 'user', 'content' => $userMessage],
                         ],
+                    'timeout' => 10,
                     ],
                 ]);
                 $data = $response->toArray();

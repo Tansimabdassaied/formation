@@ -3,32 +3,50 @@
 {% block title %}Bienvenue sur MonSite{% endblock %}
 
 {% block body %}
-    <div class="text-center">
-        <h1 class="display-4 mb-4">Bienvenue sur FSAI</h1>
-        <p class="lead">Votre plateforme dédiée à la formation, à l'information, et à l'innovation grâce à l'intelligence artificielle.</p>
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">Bienvenue sur <span class="text-dark">FSAI</span></h1>
+        <p class="lead text-muted">
+            Votre plateforme dédiée à la formation, à l'information,<br>et à l'innovation grâce à l'intelligence artificielle.
+        </p>
     </div>
 
-    <hr>
-
-    <div class="row mt-5">
+    <div class="row text-center g-4">
         <div class="col-md-4">
-            <h3>🎓 Formations</h3>
-            <p>Découvrez nos formations en ligne pour développer vos compétences dans les domaines les plus demandés : développement web, IA, data science, et bien plus.</p>
-            <a href="{{ path('training') }}" class="btn btn-primary btn-sm">Voir les formations</a>
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="card-title mb-3">🎓 Formations</h3>
+                    <p class="card-text">Développez vos compétences avec nos formations en développement web, IA, data science, et plus encore.</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a href="{{ path('training') }}" class="btn btn-outline-primary">Voir les formations</a>
+                </div>
+            </div>
         </div>
 
         <div class="col-md-4">
-            <h3>📰 Articles</h3>
-            <p>Lisez nos derniers articles sur la technologie, l'intelligence artificielle, et l'actualité numérique pour rester informé(e).</p>
-            <a href="{{ path('articles') }}" class="btn btn-primary btn-sm">Lire les articles</a>
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="card-title mb-3">📰 Articles</h3>
+                    <p class="card-text">Restez informé avec nos articles sur l'IA, la tech, et l'actualité numérique.</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a href="{{ path('articles') }}" class="btn btn-outline-primary">Lire les articles</a>
+                </div>
+            </div>
         </div>
 
         <div class="col-md-4">
-            <h3>💬 Chat IA</h3>
-            <p>Interagissez avec notre assistant intelligent pour poser vos questions, obtenir des résumés, ou bénéficier d'un accompagnement personnalisé.</p>
-            <a href="{{ path('chat') }}" class="btn btn-primary btn-sm">Accéder au chat</a>
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="card-title mb-3">💬 Chat IA</h3>
+                    <p class="card-text">Posez vos questions à notre assistant IA : résumés, explications ou accompagnement personnalisé.</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a href="{{ path('chat') }}" class="btn btn-outline-primary">Accéder au chat</a>
+                </div>
+            </div>
         </div>
     </div>
-
-    
+</div>
 {% endblock %}

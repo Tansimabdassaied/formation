@@ -79,6 +79,7 @@
         }
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.63"
+        "symfony/maker-bundle": "^1.63",
+        "tecnickcom/tcpdf": "^6.4"
     }
 }

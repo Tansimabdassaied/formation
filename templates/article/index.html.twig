@@ -3,15 +3,37 @@
 {% block title %}Articles{% endblock %}
 
 {% block body %}
-<h1>{{ page_title }}</h1>
-<ul>
-    {% for article in articles %}
-        <li>
-            <a href="{{ path('article_show', {'id': article.id}) }}">
-                {{ article.title }}
-            </a>
-            <p>{{ article.content|slice(0, 100) ~ '...' }}</p>
-        </li>
-    {% endfor %}
-</ul>
+<div class="container">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">{{ page_title }}</h1>
+    </div>
+
+    <div class="row">
+        {% for article in articles %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">
+                            <a href="{{ path('article_show', {'id': article.id}) }}" class="text-decoration-none text-dark">
+                                {{ article.title }}
+                            </a>
+                        </h5>
+                        <p class="card-text text-muted">
+                            {{ article.content|slice(0, 120) ~ '...' }}
+                        </p>
+                        <div class="mt-auto">
+                            <a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-outline-primary btn-sm">Lire la suite</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    Aucun article trouvé.
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

@@ -3,19 +3,43 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <h1>{{ info.title }}</h1>
-    <p>{{ info.description }}</p>
+<div class="container">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">{{ info.title }}</h1>
+        <p class="lead">{{ info.description }}</p>
+    </div>
 
-    <h2>Notre mission</h2>
-    <p>{{ info.mission }}</p>
+    <div class="row gy-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h2 class="h4 card-title text-secondary">Notre mission</h2>
+                    <p class="card-text">{{ info.mission }}</p>
+                </div>
+            </div>
+        </div>
 
-    <h2>Notre vision</h2>
-    <p>{{ info.vision }}</p>
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h2 class="h4 card-title text-secondary">Notre vision</h2>
+                    <p class="card-text">{{ info.vision }}</p>
+                </div>
+            </div>
+        </div>
 
-    <h2>Nos valeurs</h2>
-    <ul>
-        {% for value in info.values %}
-            <li>{{ value }}</li>
-        {% endfor %}
-    </ul>
+        <div class="col-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h2 class="h4 card-title text-secondary">Nos valeurs</h2>
+                    <ul class="list-group list-group-flush">
+                        {% for value in info.values %}
+                            <li class="list-group-item">{{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

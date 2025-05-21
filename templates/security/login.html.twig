@@ -3,21 +3,43 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
-    <h1>Connexion</h1>
+<div class="container mt-5" style="max-width: 400px;">
+    <h1 class="mb-4 text-center">Connexion</h1>
 
     {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        <div class="alert alert-danger" role="alert">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
     {% endif %}
 
-    <form method="post">
+    <form method="post" novalidate>
         <div class="mb-3">
-            <label for="username">Email :</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" required>
+            <label for="username" class="form-label">Email :</label>
+            <input 
+                type="text" 
+                id="username" 
+                name="_username" 
+                value="{{ last_username }}" 
+                class="form-control" 
+                required 
+                autofocus
+                autocomplete="username"
+            >
         </div>
+
         <div class="mb-3">
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="_password" class="form-control" required>
+            <label for="password" class="form-label">Mot de passe :</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="_password" 
+                class="form-control" 
+                required
+                autocomplete="current-password"
+            >
         </div>
-        <button type="submit" class="btn btn-primary">Se connecter</button>
+
+        <button type="submit" class="btn btn-primary w-100">Se connecter</button>
     </form>
+</div>
 {% endblock %}

@@ -3,12 +3,30 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <h1>{{ training.title }}</h1>
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title text-primary mb-3">{{ training.title }}</h2>
 
-    <p><strong>Durée :</strong> {{ training.duration }}</p>
-    <p><strong>Description :</strong> {{ training.description }}</p>
-    <p><strong>Date de début :</strong> {{ training.startDate|date('d/m/Y') }}</p>
-    <p><strong>Formateur :</strong> {{ training.instructor }}</p>
+            <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item">
+                    <strong>Durée :</strong> {{ training.duration }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Description :</strong><br>{{ training.description }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Date de début :</strong> {{ training.startDate|date('d/m/Y') }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Formateur :</strong> {{ training.instructor }}
+                </li>
+            </ul>
 
-    <a href="{{ path('training') }}" class="btn btn-primary mt-3">Retour aux formations</a>
+            <a href="{{ path('training') }}" class="btn btn-outline-primary">
+                ← Retour aux formations
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

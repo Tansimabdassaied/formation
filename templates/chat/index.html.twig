@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Chat IA{% endblock %}
+
 {% block body %}
     <h1>{{ page_title }}</h1>
 
     <form method="get" action="{{ path('chat') }}">
         <div class="mb-3">
             <label for="message" class="form-label">Votre message :</label>
-            <textarea name="message" id="message" class="form-control">{{ userMessage }}</textarea>
+            <textarea name="message" id="message" class="form-control" rows="4">{{ userMessage }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
